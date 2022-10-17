@@ -1,8 +1,4 @@
-def loop(n):
-    for i in range(0, n):
-        print(i+1, ' ', end='')
-        i+=1
-    print('')
-    
-loop(8)
-loop(6)
+str1 = 'Yves'
+str2 = 'Kris'
+str3 = f'{str1} a.k.a {str2}'
+print(str3)

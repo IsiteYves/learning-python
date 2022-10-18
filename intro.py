@@ -19,12 +19,17 @@
 #     print(f"You are {convertWeight(weight, 'L')} kilos")
 # else:
 #     print(f"You are {convertWeight(weight, 'K')} pounds")
-secret=21
-guess_count=0
-guess_limit=int(input('How many guesses do you want? '))
+secret = 21
+guess_count = 0
+guess_limit=-3
+while guess_limit not in range(1, 11):
+    guess_limit = int(input('How many guesses do you want? '))
+    if guess_limit in range(1, 11):
+        break
+    print('You can only have 1-10 guesses')
 while guess_count < guess_limit:
-    guess = int (input('Guess: '))
-    guess_count+=1
+    guess = int(input('Guess: '))
+    guess_count += 1
     if guess == secret:
         print('You won✅:)')
         break

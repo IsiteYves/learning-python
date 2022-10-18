@@ -1,12 +1,4 @@
-# isHot=False
-# is_cold=False
-# if isHot:
-#     print("It's a hot day")
-# elif is_cold and not isHot:
-#     print("It's a coldyyy day")
-# else:
-#     print("It's a fair day!!")
-# print('Enjoy!!')
+# kilos-pounds & vice-versa converter
 # def convertWeight(weight, typeOfWeight):
 #     if typeOfWeight == 'K':
 #         return weight / 0.45
@@ -19,22 +11,46 @@
 #     print(f"You are {convertWeight(weight, 'L')} kilos")
 # else:
 #     print(f"You are {convertWeight(weight, 'K')} pounds")
-secret = 21
-guess_count = 0
-guess_limit=-3
-while guess_limit not in range(1, 11):
-    guess_limit = int(input('How many guesses do you want? '))
-    if guess_limit in range(1, 11):
-        break
-    print('You can only have 1-10 guesses')
-while guess_count < guess_limit:
-    guess = int(input('Guess: '))
-    guess_count += 1
-    if guess == secret:
-        print('You won✅:)')
+
+# guessing game
+# secret = 21
+# guess_count = 0
+# guess_limit=-3
+# while guess_limit not in range(1, 11):
+#     guess_limit = int(input('How many guesses do you want? '))
+#     if guess_limit in range(1, 11):
+#         break
+#     print('You can only have 1-10 guesses')
+# while guess_count < guess_limit:
+#     guess = int(input('Guess: '))
+#     guess_count += 1
+#     if guess == secret:
+#         print('You won✅:)')
+#         break
+#     else:
+#         if guess_count == guess_limit:
+#             print('You lost❌:(')
+#         else:
+#             print('Incorrect ^_^ please try again..')
+            
+cmd='default'
+while cmd != 'quit':
+    prev_cmd = cmd
+    cmd = input('>').lower()
+    if cmd == 'help':
+        print('''
+start - to start the car
+stop - to stop the car
+quit/exit - to quit
+              ''')
+    elif cmd == 'start':
+        print('Car started...')
+    elif cmd == 'stop':
+        if prev_cmd != 'start':
+            print("Car wasn't moving to be stopped❌")
+        else:
+            print('Car stopped.')
+    elif cmd == 'quit' or cmd == 'exit':
         break
     else:
-        if guess_count == guess_limit:
-            print('You lost❌:(')
-        else:
-            print('Incorrect ^_^ please try again..')
+        print('I don\'t understand that...')

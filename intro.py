@@ -44,7 +44,10 @@ stop - to stop the car
 quit/exit - to quit
               ''')
     elif cmd == 'start':
-        print('Car started...')
+        if prev_cmd == 'start':
+            print('Car is already started')
+        else:
+            print('Car started...')
     elif cmd == 'stop':
         if prev_cmd != 'start':
             print("Car wasn't moving to be stopped❌")

@@ -34,8 +34,8 @@
 #             print('Incorrect ^_^ please try again..')
             
 cmd='default'
+started=False
 while cmd != 'quit':
-    prev_cmd = cmd
     cmd = input('>').lower()
     if cmd == 'help':
         print('''
@@ -44,15 +44,17 @@ stop - to stop the car
 quit/exit - to quit
               ''')
     elif cmd == 'start':
-        if prev_cmd == 'start':
-            print('Car is already started')
+        if started:
+            print('📮 Car is already started')
         else:
-            print('Car started...')
+            started = True
+            print('Car started⚡...')
     elif cmd == 'stop':
-        if prev_cmd != 'start':
-            print("Car wasn't moving to be stopped❌")
+        if not started:
+            print("📰 Car wasn't moving to be stopped")
         else:
-            print('Car stopped.')
+            started = False
+            print('Car stopped❌.')
     elif cmd == 'quit' or cmd == 'exit':
         break
     else:
